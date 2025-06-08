@@ -1,4 +1,12 @@
+---
+layout: page
+title: "Modern Development Environment Bootstrapping"
+permalink: /bootstrapping-setup/
+---
+
 # Modern Development Environment Bootstrapping
+
+*[w/ai](./ai/README.md)*
 
 A comprehensive guide to setting up reproducible, cross-platform development environments using modern tools and best practices.
 

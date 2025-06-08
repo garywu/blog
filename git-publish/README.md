@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Lightweight Git Publishing"
+permalink: /git-publish/
+---
+
 # Lightweight Git Publishing: Deploy Content to Any Repository
 
 *[w/ai](./ai/README.md)*
