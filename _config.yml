@@ -2,7 +2,8 @@
 title: "Developer Workflows & AI-Assisted Content"
 description: "Comprehensive guides on developer tools, modern development environments, and AI-first content creation"
 baseurl: ""
-url: "https://garywu.github.io/blog"
+url: "https://garywu.github.io"
+baseurl: "/blog"
 
 # Build settings
 markdown: kramdown
@@ -21,10 +22,10 @@ kramdown:
   syntax_highlighter: rouge
 
 # Collections for blog posts
-collections:
-  posts:
-    output: true
-    permalink: /:collection/:name/
+# collections:
+#   posts:
+#     output: true
+#     permalink: /:collection/:name/
 
 # Default layouts
 defaults:
