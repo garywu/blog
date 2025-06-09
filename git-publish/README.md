@@ -1,7 +1,5 @@
 # Lightweight Git Publishing: Deploy Content to Any Repository
 
-*[w/ai]*
-
 ## The Developer's Publishing Dilemma
 
 You're deep in your current project—code flowing, dotfiles configured, workspace dialed in. Then you have an idea for a blog post *about what you're building*. The workflow friction hits immediately: switch contexts, clone your blog repo, set up a separate workspace, lose momentum.
@@ -12,18 +10,18 @@ The lightweight git publishing challenge: **deploying content from your current 
 
 ---
 
-## The Problem: Context-Switching Kills Creativity
+## Context-Switching Kills Creativity
 
-Traditional publishing workflows force artificial boundaries:
+Looking at traditional publishing workflows, a pattern emerges: artificial boundaries everywhere.
 
 - **Separate repositories** require context switching and momentum loss
 - **Submodules and subtrees** create permanent coupling between unrelated projects  
 - **CI/CD pipelines** are overkill for simple content publishing
 - **Manual copy-paste** breaks automation and creates maintenance debt
 
-The real problem isn't technical—it's cognitive. When you're in flow on a project, the last thing you want is to spend 20 minutes setting up a publishing pipeline just to share what you've learned.
+Notice how this isn't just a technical challenge—it's cognitive. When you're in flow on a project, spending 20 minutes setting up a publishing pipeline kills the creative momentum that made you want to share in the first place.
 
-**What we need: temporary deployment strategies that work immediately and clean up after themselves.**
+What's needed: temporary deployment strategies that work immediately and clean up after themselves.
 
 ## Existing Solutions: The Landscape
 
@@ -555,19 +553,19 @@ backup,git@gitlab.com:user/backup.git,./content,main" > repos.conf
 
 ---
 
-## Conclusion: Lightweight by Design
+## Lightweight by Design
 
-The beauty of lightweight git publishing lies in its temporary nature. No permanent setup, no long-term maintenance, no coupling between unrelated repositories. Just immediate, clean publishing that gets out of your way.
+Notice how the beauty of lightweight git publishing lies in its temporary nature. No permanent setup, no long-term maintenance, no coupling between unrelated repositories. Just immediate, clean publishing that gets out of your way.
 
-These patterns work because they embrace git's fundamental strength: repositories are cheap, cloning is fast, and automation is straightforward. By treating publishing as a temporary operation rather than permanent infrastructure, we eliminate most of the friction that makes developers avoid documenting their work.
+These patterns work because they embrace git's fundamental strength: repositories are cheap, cloning is fast, and automation is straightforward. Treating publishing as a temporary operation rather than permanent infrastructure eliminates most of the friction that makes developers avoid documenting their work.
 
-**The goal isn't to replace sophisticated CI/CD pipelines—it's to make publishing so frictionless that you'll actually do it.**
+Consider the difference: instead of building sophisticated CI/CD pipelines, we make publishing so frictionless that you'll actually do it.
 
 Whether you're documenting a discovery mid-project, sharing a technique you just learned, or publishing polished content to multiple sites, these lightweight approaches let you stay in flow while sharing knowledge.
 
 Pick the approach that matches your current workflow, customize it for your needs, and start publishing without the setup overhead.
 
-*Your future self (and the developer community) will thank you.*
+Your future self (and the developer community) will thank you.
 
 ---
 

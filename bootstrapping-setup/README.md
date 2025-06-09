@@ -1,7 +1,5 @@
 # Modern Development Environment Bootstrapping
 
-*[w/ai]*
-
 ## From Chaos to Code: The Evolution of Developer Setup
 
 *Remember your first day at a new company? Hours of README-driven setup, hunting down the right Node version, fighting with permission errors, begging colleagues for their dotfiles on Slack. By lunch, you're questioning life choices. By evening, you're still not sure if you're running the right version of anything.*
@@ -759,11 +757,11 @@ main "$@"
 
 ---
 
-## Conclusion: Architecture for the Future
+## Architecture for the Future
 
-Modern development environment bootstrapping isn't just about installing tools—it's about creating **sustainable**, **secure**, and **scalable** workflows that adapt to changing needs.
+Modern development environment bootstrapping isn't just about installing tools—it's about creating sustainable, secure, and scalable workflows that adapt to changing needs.
 
-### Key Principles That Make This Work
+### Principles That Make This Work
 
 **Declarative Over Imperative**: Describe what you want, not how to get there
 - Environment declared in configuration files
@@ -785,17 +783,17 @@ Modern development environment bootstrapping isn't just about installing tools�
 - Easy to replace individual pieces as needs evolve
 - Standard interfaces enable interoperability
 
-### The Long-Term Vision
+### What This Architecture Enables
 
-This architecture enables:
-- **Zero-downtime onboarding** for new team members
-- **Consistent environments** across development, staging, and production
-- **Security compliance** without sacrificing developer experience
-- **Easy maintenance** as tools and requirements evolve
+Looking at the long-term benefits:
+- Zero-downtime onboarding for new team members
+- Consistent environments across development, staging, and production
+- Security compliance without sacrificing developer experience
+- Easy maintenance as tools and requirements evolve
 
 Whether you're a solo developer seeking reproducible setups or a team lead standardizing environments, these patterns provide a foundation that grows with your needs.
 
-**The goal isn't perfect automation—it's sustainable automation that makes development more reliable, secure, and enjoyable.**
+Consider the difference: instead of perfect automation, we build sustainable automation that makes development more reliable, secure, and enjoyable.
 
 Start with the basics, adopt incrementally, and build the environment that lets you focus on what matters: creating great software.
 
