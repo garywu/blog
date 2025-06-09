@@ -81,7 +81,7 @@ function generateHomepage(posts: BlogPost[]): string {
   const postCards = posts.map(post => `
     <article class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
       <h2 class="text-xl font-semibold mb-2">
-        <a href="/${post.slug}.html" class="text-blue-600 hover:text-blue-800">${post.title}</a>
+        <a href="${post.slug}.html" class="text-blue-600 hover:text-blue-800">${post.title}</a>
       </h2>
       <p class="text-gray-600 mb-3">${post.description}</p>
       <time class="text-sm text-gray-500">${post.date.toLocaleDateString()}</time>
@@ -133,7 +133,7 @@ function generatePostPage(post: BlogPost): string {
 <body class="bg-gray-50 min-h-screen">
   <div class="max-w-4xl mx-auto px-4 py-8">
     <nav class="mb-8">
-      <a href="/" class="text-blue-600 hover:text-blue-800">&larr; Back to Blog</a>
+      <a href="index.html" class="text-blue-600 hover:text-blue-800">&larr; Back to Blog</a>
     </nav>
     
     <article class="bg-white rounded-lg p-8 shadow-sm">
