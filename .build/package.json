@@ -1,0 +1,21 @@
+{
+  "name": ".build",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "bun run build.ts",
+    "dev": "bun run --watch build.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.8",
+    "marked": "^15.0.12",
+    "tailwindcss": "^4.1.8"
+  }
+}

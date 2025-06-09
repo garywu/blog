@@ -1,4 +1,4 @@
-name: Build and Deploy to GitHub Pages
+name: Build and Deploy Blog
 
 on:
   push:
@@ -23,29 +23,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          ruby-version: '3.1'
-          bundler-cache: true
+          bun-version: latest
           
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v4
-        
       - name: Install dependencies
         run: |
-          gem install bundler
-          bundle config set --local path 'vendor/bundle'
-          bundle install
+          cd .build
+          bun install
           
       - name: Build site
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: production
+        run: |
+          cd .build
+          bun run build
           
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.build/dist'
 
   deploy:
     if: github.ref == 'refs/heads/main'
