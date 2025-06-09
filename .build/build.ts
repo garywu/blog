@@ -119,7 +119,6 @@ function generateHomepage(posts: BlogPost[]): string {
         <a href="${post.slug}.html" class="text-blue-600 hover:text-blue-800">${post.title}</a>
       </h2>
       <p class="text-gray-600 mb-3">${post.description}</p>
-      <time class="text-sm text-gray-500">${post.date.toLocaleDateString()}</time>
     </article>
   `).join('');
 
@@ -172,11 +171,6 @@ function generatePostPage(post: BlogPost): string {
     </nav>
     
     <article class="bg-white rounded-lg p-8 shadow-sm">
-      <header class="mb-8">
-        <h1 class="text-3xl font-bold text-gray-900 mb-2">${post.title}</h1>
-        <time class="text-gray-500">${post.date.toLocaleDateString()}</time>
-      </header>
-      
       <div class="prose prose-lg max-w-none">
         ${post.content}
       </div>
