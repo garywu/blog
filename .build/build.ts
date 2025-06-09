@@ -48,9 +48,44 @@ async function readMarkdownFiles(): Promise<BlogPost[]> {
       const titleMatch = markdownContent.match(/^#\s+(.+)$/m);
       const title = metadata.title || (titleMatch ? titleMatch[1] : dir);
       
-      // Create description from first paragraph
-      const descriptionMatch = markdownContent.match(/\n\n([^#\n]+)/);
-      const description = metadata.description || (descriptionMatch?.[1]?.trim() || '');
+      // Create description from content, skipping attribution and getting actual description
+      let description = metadata.description;
+      
+      if (!description) {
+        // Remove the w/ai attribution line and look for actual descriptive content
+        const cleanContent = markdownContent
+          .replace(/\*\[w\/ai\]\(\.\/ai\/README\.md\)\*/g, '') // Remove w/ai attribution
+          .replace(/^---[\s\S]*?---\n/g, ''); // Remove any frontmatter
+        
+                 // Look for content after the main title but before the first heading
+         const splitContent = cleanContent.split(/^#[^#]/m);
+         const afterTitle = splitContent.length > 1 ? splitContent[1] : null;
+         if (afterTitle) {
+           // Find the first substantial paragraph (not just a single line)
+           const paragraphs = afterTitle.split(/\n\s*\n/).filter(p => 
+             p.trim().length > 50 && 
+             !p.trim().startsWith('#') && 
+             !p.trim().startsWith('*') &&
+             !p.trim().startsWith('-') &&
+             !p.trim().startsWith('1.')
+           );
+           
+           if (paragraphs.length > 0 && paragraphs[0]) {
+             const firstParagraph = paragraphs[0].trim()
+               .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // Remove markdown links, keep text
+               .replace(/\*\*([^*]+)\*\*/g, '$1') // Remove bold formatting
+               .replace(/\*([^*]+)\*/g, '$1') // Remove italic formatting
+               .replace(/`([^`]+)`/g, '$1'); // Remove code formatting
+             description = firstParagraph.substring(0, 200) + (firstParagraph.length > 200 ? '...' : '');
+           }
+         }
+        
+        // Fallback to a simple approach if above doesn't work
+        if (!description) {
+          const simpleMatch = cleanContent.match(/\n\n([^#\n]{50,})/);
+          description = simpleMatch?.[1]?.trim().substring(0, 150) + '...' || 'Comprehensive guide with practical examples and best practices.';
+        }
+      }
       
       // Use current date if no date specified
       const date = metadata.date ? new Date(metadata.date) : new Date();
