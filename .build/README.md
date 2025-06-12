@@ -66,3 +66,12 @@ ls .build/data/
 If `.build/data/` does not exist, it will be created automatically by the extraction script.
 
 ---
+
+## Build Directory Policy (Strict)
+- **All build, environment, and dependency files must be inside `.build/` only.**
+- This includes: `.venv`, `.envrc`, `requirements.txt`, `litellm.yaml`, `flake.nix`, and any other build/config files.
+- The project root must remain clean for writers and content only.
+- If you find a build artifact (including `.venv`) in the root, move it to `.build/` immediately and update your workflow.
+- This policy is strict and must be followed for all development and CI workflows.
+
+---
