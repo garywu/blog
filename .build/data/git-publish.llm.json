@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl-cd934f89-9fe2-4b33-b0b7-0352497e349b",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "Here is the extracted metadata:\n\n```\n{\n  \"tags\": [\"git\", \"publishing\", \"temporary deployment\", \"command-line tools\", \"shell functions\", \"best practices\"],\n  \"categories\": [\"development\", \"publishing\", \"tools\"],\n  \"links\": [\n    {\"title\": \"Official Git Documentation\", \"href\": \"https://git-scm.com/docs\"},\n    {\"title\": \"GitHub CLI Documentation\", \"href\": \"https://cli.github.com/\"},\n    {\"title\": \"Git Subtree Guide\", \"href\": \"https://www.atlassian.com/git/tutorials/git-subtree\"}\n  ]\n}\n```",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": null
+      }
+    }
+  ],
+  "created": 1749741051,
+  "model": "ollama/llama3",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 129,
+    "prompt_tokens": 4096,
+    "total_tokens": 4225,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

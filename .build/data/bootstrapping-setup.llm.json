@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl-22a935f8-b39b-4d77-8330-6d3f82f048b0",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "Here are the extracted metadata:\n\n**Tags**\n\n* \"modern-development-environment\"\n* \"package-management\"\n* \"cross-platform\"\n* \"dotfiles\"\n* \"secrets-management\"\n* \"automation\"\n* \"reproducibility\"\n\n**Categories**\n\n* \"Development\"\n* \"Tools\"\n* \"Configuration Management\"\n* \"Security\"\n* \"Automation\"\n\n**Links**\n\n* None provided",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": null
+      }
+    }
+  ],
+  "created": 1749740867,
+  "model": "ollama/llama3",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 79,
+    "prompt_tokens": 4096,
+    "total_tokens": 4175,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

@@ -1,1 +1,66 @@
-{}
+{
+  "bootstrapping-setup": {
+    "tags": [
+      "modern-development-environment",
+      "package-management",
+      "cross-platform",
+      "dotfiles",
+      "secrets-management",
+      "automation",
+      "reproducibility"
+    ],
+    "categories": [
+      "Development",
+      "Tools",
+      "Configuration Management",
+      "Security",
+      "Automation"
+    ],
+    "links": []
+  },
+  "git-publish": {
+    "tags": [
+      "git",
+      "publishing",
+      "temporary deployment",
+      "command-line tools",
+      "shell functions",
+      "best practices"
+    ],
+    "categories": [
+      "development",
+      "publishing",
+      "tools"
+    ],
+    "links": [
+      {
+        "title": "Official Git Documentation",
+        "href": "https://git-scm.com/docs"
+      },
+      {
+        "title": "GitHub CLI Documentation",
+        "href": "https://cli.github.com/"
+      },
+      {
+        "title": "Git Subtree Guide",
+        "href": "https://www.atlassian.com/git/tutorials/git-subtree"
+      }
+    ]
+  },
+  "w-slash-ai": {
+    "tags": [
+      "AI-First Perspective",
+      "W/AI",
+      "Artificial Intelligence",
+      "Human Technology",
+      "Pattern Recognition",
+      "Tool-making"
+    ],
+    "categories": [
+      "AI and Society",
+      "Technology and Humanity",
+      "Evolution of Human Tools"
+    ],
+    "links": []
+  }
+}

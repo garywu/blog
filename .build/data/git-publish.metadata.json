@@ -1,0 +1,29 @@
+{
+  "tags": [
+    "git",
+    "publishing",
+    "temporary deployment",
+    "command-line tools",
+    "shell functions",
+    "best practices"
+  ],
+  "categories": [
+    "development",
+    "publishing",
+    "tools"
+  ],
+  "links": [
+    {
+      "title": "Official Git Documentation",
+      "href": "https://git-scm.com/docs"
+    },
+    {
+      "title": "GitHub CLI Documentation",
+      "href": "https://cli.github.com/"
+    },
+    {
+      "title": "Git Subtree Guide",
+      "href": "https://www.atlassian.com/git/tutorials/git-subtree"
+    }
+  ]
+}
