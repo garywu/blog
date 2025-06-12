@@ -50,10 +50,10 @@ async function triggerBuild() {
 // Watch for file changes
 async function startWatcher() {
   const watchPaths = [
-    '../site.yaml',
-    '../git-publish/README.md',
-    '../bootstrapping-setup/README.md', 
-    '../w-slash-ai/README.md',
+    '../../site.yaml',
+    '../../git-publish/README.md',
+    '../../bootstrapping-setup/README.md', 
+    '../../w-slash-ai/README.md',
     './tailwind.config.js',
     './build.ts'
   ];

@@ -90,6 +90,12 @@ async function generateTailwindCSS(): Promise<string> {
     .prose pre { background-color: #1f2937; color: #f9fafb; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; }
     .prose pre code { background-color: transparent; color: inherit; padding: 0; }
     .max-w-none { max-width: none; }
+    .text-2xl { font-size:1.5rem; line-height:2rem; }
+    .pb-4 { padding-bottom:1rem; }
+    .border-b { border-bottom-width:1px; }
+    .focus\:outline-none:focus { outline: none; }
+    .w-full { width:100%; }
+    .max-w-2xl { max-width:42rem; }
   `.replace(/\s+/g, ' ').trim();
   
   return css;
@@ -98,7 +104,14 @@ async function generateTailwindCSS(): Promise<string> {
 async function inlineCSS() {
   console.log('🎨 Inlining CSS...');
   
-  const css = await generateTailwindCSS();
+  let css: string;
+  try {
+    css = await readFile('dist/tailwind.css', 'utf-8');
+    console.log('✅ Loaded generated Tailwind CSS');
+  } catch {
+    console.log('⚠️  dist/tailwind.css not found, falling back to minimal CSS');
+    css = await generateTailwindCSS();
+  }
   const files = await readdir('dist');
   const htmlFiles = files.filter(file => file.endsWith('.html'));
   

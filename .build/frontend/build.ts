@@ -24,7 +24,7 @@ interface SiteConfig {
 
 async function loadSiteConfig(): Promise<SiteConfig> {
   try {
-    const configContent = await readFile('../site.yaml', 'utf-8');
+    const configContent = await readFile('../../site.yaml', 'utf-8');
     return parseYaml(configContent) as SiteConfig;
   } catch (error) {
     console.log('⚠️  No site.yaml found, using defaults');
@@ -65,7 +65,7 @@ async function readMarkdownFiles(): Promise<BlogPost[]> {
   
   for (const dir of blogDirs) {
     try {
-      const readmePath = join('..', dir, 'README.md');
+      const readmePath = join('../..', dir, 'README.md');
       const content = await readFile(readmePath, 'utf-8');
       const { metadata, content: markdownContent } = await extractFrontmatter(content);
       
@@ -190,23 +190,38 @@ function generateHomepage(posts: BlogPost[], siteConfig: SiteConfig): string {
 </head>
 <body class="bg-gray-50 min-h-screen">
   <div class="max-w-4xl mx-auto px-4 py-8">
-    <header class="mb-12">
-      <div class="header-center-col mb-1">
-        <div class="icon-container" tabindex="0">
-          <img src="https://avatars.githubusercontent.com/u/38446?v=4" alt="Gary Wu">
+    <header class="mb-12 border-b border-gray-200 pb-4">
+      <div class="flex items-center justify-between">
+        <!-- Left: Hamburger -->
+        <button class="text-2xl font-bold focus:outline-none" aria-label="Menu">☰</button>
+
+        <!-- Center: Logo / Title -->
+        <div class="flex flex-col items-center">
+          <div class="icon-container mb-1" tabindex="0">
+            <img src="https://avatars.githubusercontent.com/u/38446?v=4" alt="Gary Wu">
+          </div>
+          <h1 class="header-title">${siteConfig.title}</h1>
         </div>
-        <h1 class="header-title">${siteConfig.title}</h1>
-        <div class="tagline-float">${siteConfig.tagline}</div>
+
+        <!-- Right: Social links -->
+        <div class="flex items-center">${socialLinks}</div>
       </div>
-      <hr class="border-gray-200 mb-1">
-      ${socialLinks ? `<div class="text-sm flex items-center justify-center">${socialLinks}</div>` : ''}
     </header>
-    <main class="space-y-6">
+    <main class="space-y-6 flex flex-col items-center">
       ${postCards}
     </main>
     <footer class="mt-16 text-center text-gray-500 text-sm">
       <p>Created through human-AI collaboration</p>
-      <p class="mt-2">Build #${Math.floor(Date.now() / 1000)} • ${new Date().toLocaleString()}</p>
+      <p class="mt-2">Build #${Math.floor(Date.now() / 1000)} • <span id="build-time" data-utc="${new Date().toISOString()}"></span></p>
+      <script>
+        (function(){
+          const el=document.getElementById('build-time');
+          if(el){
+            const d=new Date(el.dataset.utc??'');
+            el.textContent=d.toLocaleString();
+          }
+        })();
+      </script>
     </footer>
   </div>
 </body>
@@ -344,6 +359,22 @@ async function build() {
   
   // Ensure dist directory exists
   await mkdir('dist', { recursive: true });
+  
+  // Build Tailwind CSS
+  console.log('🎨 Building Tailwind CSS...');
+  await new Promise((resolve, reject) => {
+    const { spawn } = require('child_process');
+    const tailwind = spawn('bun', [
+      'x', 'tailwindcss',
+      '-i', './input.css',
+      '-o', 'dist/tailwind.css',
+      '--minify'
+    ], { stdio: 'inherit' });
+    tailwind.on('close', (code: number) => {
+      if (code === 0) resolve(undefined);
+      else reject(new Error(`Tailwind build failed with code ${code}`));
+    });
+  });
   
   // Generate homepage
   const homepage = generateHomepage(posts, siteConfig);
