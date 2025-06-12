@@ -1,0 +1,13 @@
+:root {
+  --color-bg: #F8FAFC;
+  --color-card: #FFFFFF;
+  --color-border: #E5E7EB;
+  --color-accent: #2563EB;
+  --color-accent-hover: #1D4ED8;
+  --color-shadow: rgba(16, 30, 54, 0.03);
+  --color-shadow-hover: rgba(16, 30, 54, 0.06);
+  --color-text: #1A202C;
+  --color-text-secondary: #64748B;
+  --radius: 0.5rem;
+  --transition: 0.2s cubic-bezier(.4,0,.2,1);
+} 

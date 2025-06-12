@@ -1,22 +1,17 @@
 {
-  "name": ".build",
-  "module": "index.ts",
-  "type": "module",
-  "private": true,
+  "name": "blog",
+  "version": "1.0.0",
   "scripts": {
-    "build": "bun run build.ts",
-    "dev": "bun run --watch build.ts",
-    "preview": "bun run build.ts && bun run server.ts"
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
   "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
+    "tailwindcss": "^3.4.1",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.8",
-    "marked": "^15.0.12",
-    "tailwindcss": "^4.1.8"
+    "@radix-ui/themes": "^2.0.3",
+    "alpinejs": "^3.13.5"
   }
-}
+} 

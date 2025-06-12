@@ -14,6 +14,8 @@ async function generateTailwindCSS(): Promise<string> {
     .px-4 { padding-left: 1rem; padding-right: 1rem; }
     .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
     .mb-4 { margin-bottom: 1rem; }
+    .mb-3 { margin-bottom: 0.75rem; }
+    .mb-1 { margin-bottom: 0.25rem; }
     .mb-2 { margin-bottom: 0.5rem; }
     .mb-3 { margin-bottom: 0.75rem; }
     .mb-8 { margin-bottom: 2rem; }
@@ -24,9 +26,43 @@ async function generateTailwindCSS(): Promise<string> {
     .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
     .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
     .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+    .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+    .text-base { font-size: 1rem; line-height: 1.5rem; }
     .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+    .flex { display: flex; }
+    .justify-between { justify-content: space-between; }
+    .items-center { align-items: center; }
+    .w-12 { width: 3rem; }
+    .h-12 { height: 3rem; }
+    .w-10 { width: 2.5rem; }
+    .h-10 { height: 2.5rem; }
+    .w-8 { width: 2rem; }
+    .h-8 { height: 2rem; }
+    .w-7 { width: 1.75rem; }
+    .h-7 { height: 1.75rem; }
+    .w-6 { width: 1.5rem; }
+    .h-6 { height: 1.5rem; }
+    .w-5 { width: 1.25rem; }
+    .h-5 { height: 1.25rem; }
+    .w-4 { width: 1rem; }
+    .h-4 { height: 1rem; }
+    .p-1 { padding: 0.25rem; }
+    .rounded-full { border-radius: 9999px; }
+    .mr-8 { margin-right: 2rem; }
+    .mr-6 { margin-right: 1.5rem; }
+    .mr-4 { margin-right: 1rem; }
+    .mr-3 { margin-right: 0.75rem; }
+    .mr-2 { margin-right: 0.5rem; }
+    .mr-1 { margin-right: 0.25rem; }
+    .ml-4 { margin-left: 1rem; }
+    .bg-gray-200 { background-color: #e5e7eb; }
+    .justify-center { justify-content: center; }
+    .mx-2 { margin-left: 0.5rem; margin-right: 0.5rem; }
+    .inline-block { display: inline-block; }
     .font-bold { font-weight: 700; }
     .font-semibold { font-weight: 600; }
+    .font-normal { font-weight: 400; }
+    .font-light { font-weight: 300; }
     .text-gray-900 { color: #111827; }
     .text-gray-600 { color: #4b5563; }
     .text-gray-500 { color: #6b7280; }

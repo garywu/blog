@@ -1,0 +1,30 @@
+# Site Configuration  
+title: "Gary Wu"
+tagline: "We are what we repeatedly do. Excellence, then, is not an act, but a habit of one's making."
+
+# Social links
+social:
+  github: "https://github.com/garywu"
+  twitter: "https://twitter.com/garywu"
+
+# Meta information
+description: "A collection of practical guides exploring modern development workflows and AI-assisted content creation"
+author: "Gary Wu"
+url: "https://garywu.github.io/blog"
+
+# Navigation and structure
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "AI Perspective"
+    url: "/w-slash-ai/"
+  - title: "Git Publishing"
+    url: "/git-publish/"
+  - title: "Environment Setup"
+    url: "/bootstrapping-setup/"
+
+# Theme and styling
+theme:
+  primary_color: "#2563eb"
+  accent_color: "#1e40af"
+  background_color: "#f9fafb" 

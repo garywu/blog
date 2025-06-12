@@ -1,0 +1,43 @@
+.card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 2px var(--color-shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: box-shadow var(--transition), background var(--transition);
+}
+.card:hover, .card:focus-within {
+  background: #F1F5F9;
+  box-shadow: 0 4px 12px var(--color-shadow-hover);
+}
+
+.button, a.button {
+  background: transparent;
+  color: var(--color-accent);
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.5em 1.25em;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+.button:hover, a.button:hover, .button:focus, a.button:focus {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+a {
+  color: var(--color-accent);
+  font-weight: 500;
+  text-decoration: none;
+  transition: text-decoration var(--transition);
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.secondary {
+  color: var(--color-text-secondary);
+} 

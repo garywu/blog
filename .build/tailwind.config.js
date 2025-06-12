@@ -1,28 +1,20 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ['./dist/**/*.html'],
+module.exports = {
+  content: [
+    "./src/**/*.{html,js,ts,jsx,tsx}",
+    "./node_modules/@radix-ui/themes/**/*.{js,ts,jsx,tsx}"
+  ],
   theme: {
     extend: {
-      typography: {
-        DEFAULT: {
-          css: {
-            maxWidth: 'none',
-            code: {
-              backgroundColor: '#f3f4f6',
-              padding: '0.25rem 0.5rem',
-              borderRadius: '0.25rem',
-              fontWeight: '400',
-            },
-            'code::before': {
-              content: '""',
-            },
-            'code::after': {
-              content: '""',
-            },
-          },
-        },
+      borderRadius: {
+        '1': 'var(--radius-1)',
+        '2': 'var(--radius-2)',
+        '3': 'var(--radius-3)',
+        '4': 'var(--radius-4)',
+        '5': 'var(--radius-5)',
+        '6': 'var(--radius-6)',
       },
     },
   },
   plugins: [],
-}; 
+} 
